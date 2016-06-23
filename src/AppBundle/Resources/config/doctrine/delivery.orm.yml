@@ -1,4 +1,4 @@
-AppBundle\Entity\delivery;
+AppBundle\Entity\Delivery;
   type:  entity
   table:  delivery
   id:

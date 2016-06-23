@@ -1,4 +1,4 @@
-AppBundle\Entity\customer;
+AppBundle\Entity\Customer;
   type:  entity
   table:  customer
   id:

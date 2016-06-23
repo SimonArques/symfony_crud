@@ -1,4 +1,4 @@
-AppBundle\Entity\invoice;
+AppBundle\Entity\Invoice;
   type:  entity
   table:  invoice
   id:

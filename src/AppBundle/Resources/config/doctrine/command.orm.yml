@@ -1,4 +1,4 @@
-AppBundle\Entity\command;
+AppBundle\Entity\Command;
   type:  entity
   table:  command
   id:
