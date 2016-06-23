@@ -14,7 +14,7 @@ AppBundle\Entity\product;
       nullable:  true
     price:  float
 
-  oneToMany:
-    orderDetail:
-      targetEntity:  orderDetail
-      mappedBy:
+    oneToMany:
+      orderDetail:
+        targetEntity: OrderDetail
+        mappedBy: product

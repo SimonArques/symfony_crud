@@ -14,19 +14,19 @@ AppBundle\Entity\customer;
       unique: true
     address:  string
       length:  255
-
     postalCode:  string
       length:  5
-
     city:  string
       lenght:  100
-
     telephone:  string
       length:  20
       nullable:  true
-
     email:  string
       length:  255
+  oneToMany:
+    Command:
+      targetEntity: Command
+      mappedBy: customer
 
 
 

@@ -10,3 +10,7 @@ AppBundle\Entity\invoice;
       length: 255
       unique: true
     dateInvoice: datetime
+  oneToMany:
+    delivery:
+      targetEntity: Delivery
+      mappedBy: invoice

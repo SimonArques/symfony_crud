@@ -10,4 +10,16 @@ AppBundle\Entity\delivery;
       length: 255
       unique: true
     dateDelivery: datetime
-
+  manyToOne:
+    command:
+      targetEntity: Command
+      inversedBy: delivery
+      joinColumn:
+        name: command_id
+        referencedColumnName: id
+    invoice:
+      targetEntity: Invoice
+      inversedBy: delivery
+      joinColumn:
+        name: invoice_id
+        referencedColumnName: id

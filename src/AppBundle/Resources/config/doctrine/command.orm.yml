@@ -10,3 +10,17 @@ AppBundle\Entity\command;
       length: 255
       unique: true
     dateCreated:  datetime
+  oneToMany:
+    orderDetail:
+      targetEntity: OrderDetail
+      mappedBy: command
+    delivery:
+      targetEntity: Delivery
+      mappedBy: command
+  manyToOne:
+    customer:
+      targetEntity: Customer
+      inversedBy: command
+      joinColumn:
+        name: command_id
+        referencedColumnName: id

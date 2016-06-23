@@ -7,4 +7,16 @@ AppBundle\Entity\orderDetail;
       generator:  {  strategy:  AUTO  }
   fields:
     qte:  float
-
+  manyToOne:
+    product:
+      targetEntity: Product
+      inversedBy: orderDetail
+      joinColumn:
+        name: product_id
+        referencedColumnName: id
+    command:
+      targetEntity: Command
+      inversedBy: orderDetail
+      joinColumn:
+        name: command_id
+        referencedColumnName: id
