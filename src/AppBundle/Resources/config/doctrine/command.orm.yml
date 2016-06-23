@@ -1,0 +1,12 @@
+AppBundle\Entity\command;
+  type:  entity
+  table:  command
+  id:
+    id:
+      type:  integer
+      generator:  {  strategy:  AUTO  }
+  fields:
+    ref: string
+      length: 255
+      unique: true
+    dateCreated:  datetime

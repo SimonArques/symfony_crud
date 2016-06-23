@@ -1,0 +1,10 @@
+AppBundle\Entity\orderDetail;
+  type:  entity
+  table:  orderDetail
+  id:
+    id:
+      type:  integer
+      generator:  {  strategy:  AUTO  }
+  fields:
+    qte:  float
+

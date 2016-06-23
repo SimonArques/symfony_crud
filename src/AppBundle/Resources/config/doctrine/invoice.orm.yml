@@ -1,0 +1,12 @@
+AppBundle\Entity\invoice;
+  type:  entity
+  table:  invoice
+  id:
+    id:
+      type:  integer
+      generator:  {  strategy:  AUTO  }
+  fields:
+    ref: string
+      length: 255
+      unique: true
+    dateInvoice: datetime

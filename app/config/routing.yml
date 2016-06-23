@@ -1,3 +1,7 @@
+app_crud:
+    resource: "@appCrudBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
