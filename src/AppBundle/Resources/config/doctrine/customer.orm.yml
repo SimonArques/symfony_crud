@@ -10,19 +10,25 @@ AppBundle\Entity\Customer:
       type: string
       length: 255
       unique: true
-    name: string
+    name:
+      type: string
       length: 255
       unique: true
-    address:  string
+    address:
+      type: string
       length: 255
-    postalCode: string
+    postalCode:
+      type: string
       length: 5
-    city: string
+    city:
+      type: string
       lenght: 100
-    telephone: string
+    telephone:
+      type: string
       length: 20
       nullable: true
-    email: string
+    email:
+      type: string
       length: 255
   oneToMany:
     Command:

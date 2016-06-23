@@ -10,7 +10,8 @@ AppBundle\Entity\Product:
       type: string
       length: 255
       unique: true
-    description: string
+    description:
+      type: string
       length:  255
       nullable:  true
     price:  float
