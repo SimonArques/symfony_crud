@@ -1,0 +1,27 @@
+app\CrudBundle\Entity\Command:
+  type: entity
+  table: command
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ref:
+      type: string
+      length: 255
+      unique: true
+    dateCreated: datetime
+  oneToMany:
+    orderDetail:
+      targetEntity: OrderDetail
+      mappedBy: command
+    delivery:
+      targetEntity: Delivery
+      mappedBy: command
+  manyToOne:
+    customer:
+      targetEntity: Customer
+      inversedBy: command
+      joinColumn:
+        name: command_id
+        referencedColumnName: id
