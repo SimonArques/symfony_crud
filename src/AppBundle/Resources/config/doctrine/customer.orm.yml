@@ -1,28 +1,29 @@
-AppBundle\Entity\Customer;
-  type:  entity
-  table:  customer
+AppBundle\Entity\Customer:
+  type: entity
+  table: customer
   id:
     id:
-      type:  integer
-      generator:  {  strategy:  AUTO  }
+      type: integer
+      generator: { strategy: AUTO }
   fields:
-    ref:  string
-      length:  255
-      unique:  true
+    ref:
+      type: string
+      length: 255
+      unique: true
     name: string
       length: 255
       unique: true
     address:  string
-      length:  255
-    postalCode:  string
-      length:  5
-    city:  string
-      lenght:  100
-    telephone:  string
-      length:  20
-      nullable:  true
-    email:  string
-      length:  255
+      length: 255
+    postalCode: string
+      length: 5
+    city: string
+      lenght: 100
+    telephone: string
+      length: 20
+      nullable: true
+    email: string
+      length: 255
   oneToMany:
     Command:
       targetEntity: Command

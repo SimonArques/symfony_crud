@@ -1,15 +1,16 @@
-AppBundle\Entity\Command;
-  type:  entity
-  table:  command
+AppBundle\Entity\Command:
+  type: entity
+  table: command
   id:
     id:
-      type:  integer
-      generator:  {  strategy:  AUTO  }
+      type: integer
+      generator: { strategy: AUTO }
   fields:
-    ref: string
+    ref:
+      type: string
       length: 255
       unique: true
-    dateCreated:  datetime
+    dateCreated: datetime
   oneToMany:
     orderDetail:
       targetEntity: OrderDetail

@@ -1,4 +1,4 @@
-AppBundle\Entity\OrderDetail;
+AppBundle\Entity\OrderDetail:
   type:  entity
   table:  orderDetail
   id:

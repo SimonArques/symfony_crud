@@ -1,4 +1,4 @@
-AppBundle\Entity\Delivery;
+AppBundle\Entity\Delivery:
   type:  entity
   table:  delivery
   id:
@@ -6,7 +6,8 @@ AppBundle\Entity\Delivery;
       type:  integer
       generator:  {  strategy:  AUTO  }
   fields:
-    ref: string
+    ref:
+      type: string
       length: 255
       unique: true
     dateDelivery: datetime

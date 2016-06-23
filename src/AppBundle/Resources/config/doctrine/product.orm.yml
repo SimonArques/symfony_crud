@@ -1,4 +1,4 @@
-AppBundle\Entity\Product;
+AppBundle\Entity\Product:
   type:  entity
   table:  product
   id:
@@ -6,7 +6,8 @@ AppBundle\Entity\Product;
       type:  integer
       generator:  {  strategy:  AUTO  }
   fields:
-    name: string
+    name:
+      type: string
       length: 255
       unique: true
     description: string

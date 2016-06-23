@@ -1,4 +1,4 @@
-AppBundle\Entity\Invoice;
+AppBundle\Entity\Invoice:
   type:  entity
   table:  invoice
   id:
@@ -6,7 +6,8 @@ AppBundle\Entity\Invoice;
       type:  integer
       generator:  {  strategy:  AUTO  }
   fields:
-    ref: string
+    ref:
+      type: string
       length: 255
       unique: true
     dateInvoice: datetime
