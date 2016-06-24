@@ -13,26 +13,32 @@ use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Customer;
 
 
-class LoadCustomerData
+class LoadCustomerData implements FixtureInterface
 {
 
     public function load(ObjectManager $em){
 
-        for($i = 1; $i <= 15; $i++){
-
+        for($i = 1; $i <= 10; $i++)
+        {
             $customer = new Customer();
-            $customer->setRef('12345') . $i);
-            $customer->setName('boulbi' . $i);
-            $customer->setAddress($i . "Rue du test");
-            $customer->setPostalCode('35000');
-            $customer->setCity('Rennes');
-            $customer->setTelephone('0234567890');
-            $customer->setEmail('test@gromail.com');
+            $customer->setRef("1234567890" . $i);
+            $customer->setName('Francis');
+            $customer->setEmail('francis@fixture.com');
+            $customer->setAddress("rue de l'IMIE");
+            $customer->setPostalCode("35000");
+            $customer->setCity("Rennes");
+            $customer->setTelephone("0299647501");
 
-            $manager->persist($customer);
-            $manager->flush();
+            $this->setReference('1234567890' . $i, $customer);
+
+            $em->persist($customer);
         }
 
-    }
+        $em->flush($customer);
 
+    }
+    public function getOrder()
+    {
+        return 1; // the order in which fixtures will be loaded
+    }
 }
