@@ -21,7 +21,8 @@ class LoadOrderDetailData extends AbstractFixture implements OrderedFixtureInter
         {
             $orderDetail  = new OrderDetail();
             $orderDetail->setQte('20' . $i);
-            $this->setProduct($this->getReference ('produit' . $i));
+
+            $orderDetail->setProduct($this->getReference ('produit' . $i));
 
             $em->persist($orderDetail);
         }

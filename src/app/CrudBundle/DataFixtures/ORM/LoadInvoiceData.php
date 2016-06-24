@@ -23,6 +23,8 @@ class LoadInvoiceData implements FixtureInterface
             $invoice = new Invoice();
             $invoice->setRef('1234567890' . $i);
             $invoice->setDateInvoice(new \DateTime('2016-10-10'));
+
+            $em->persist($invoice);
         }
 
         $em->flush($invoice);
