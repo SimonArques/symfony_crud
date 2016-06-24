@@ -8,12 +8,13 @@
 
 namespace CrudBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Customer;
 
 
-class LoadCustomerData implements FixtureInterface
+class LoadCustomerData extends AbstractFixture implements FixtureInterface
 {
 
     public function load(ObjectManager $em){

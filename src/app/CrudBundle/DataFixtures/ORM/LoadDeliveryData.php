@@ -25,7 +25,7 @@ class LoadDeliveryData implements FixtureInterface
             $delivery->setDateDelivery(new \DateTime('2016-10-10'));
         }
 
-        $em->flush();
+        $em->flush($delivery);
     }
 
     public function getOrder()

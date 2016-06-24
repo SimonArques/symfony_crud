@@ -25,7 +25,7 @@ class LoadInvoiceData implements FixtureInterface
             $invoice->setDateInvoice(new \DateTime('2016-10-10'));
         }
 
-        $em->flush();
+        $em->flush($invoice);
     }
 
     public function getOrder()

@@ -9,22 +9,23 @@
 namespace CrudBundle\DataFixtures\ORM;
 
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Product;
 
-class LoadProductData implements FixtureInterface
+class LoadProductData extends AbstractFixture implements FixtureInterface
 {
     public function load(ObjectManager $em){
 
         for($i = 1; $i <= 10; $i++)
         {
             $product = new Product();
-            $product->setName('produit1');
+            $product->setName('produit'. $i);
             $product->setDescription('Un produit cool');
             $product->setPrice("20");
 
-            $this->setName('produit1' . $i, $product);
+            $this->setReference('produit' . $i, $product);
 
 
             $em->persist($product);

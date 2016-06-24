@@ -12,7 +12,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Command;
 
-class LoadCommandData implements FixtureInterface 
+class LoadCommandData implements FixtureInterface
 {
 
     public function load(ObjectManager $em){
@@ -21,7 +21,7 @@ class LoadCommandData implements FixtureInterface
         {
             $command  = new Command();
             $command->setRef("1234567890" . $i);
-            $command->setDateCreated(DATE_ISO8601);
+            $command->setDateCreated(new \DateTime('2016-10-10'));
 
 
             $this->setCustomer($this->getReference ('1234567890' . $i));
