@@ -21,7 +21,7 @@ class LoadDeliveryData implements FixtureInterface
         for($i = 1; $i <= 10; $i++) {
 
             $delivery = new Delivery();
-            $delivery->setRef('12345678990' . $i);
+            $delivery->setRef('1234567890' . $i);
             $delivery->setDateDelivery(new \DateTime('2016-10-10'));
         }
 

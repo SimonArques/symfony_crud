@@ -21,7 +21,7 @@ class LoadInvoiceData implements FixtureInterface
         for($i = 1; $i <= 10; $i++) {
 
             $invoice = new Invoice();
-            $invoice->setRef('12345678990' . $i);
+            $invoice->setRef('1234567890' . $i);
             $invoice->setDateInvoice(new \DateTime('2016-10-10'));
         }
 

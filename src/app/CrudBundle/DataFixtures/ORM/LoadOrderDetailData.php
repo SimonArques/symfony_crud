@@ -7,11 +7,12 @@
  */
 
 namespace CrudBundle\DataFixtures\ORM;
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\OrderDetail;
 
-class LoadOrderDetailData implements FixtureInterface
+class LoadOrderDetailData extends AbstractFixture implements OrderedFixtureInterface
 {
 
     public function load(ObjectManager $em){
@@ -20,10 +21,7 @@ class LoadOrderDetailData implements FixtureInterface
         {
             $orderDetail  = new OrderDetail();
             $orderDetail->setQte('20' . $i);
-
-
-
-            $this->setName($this->getName ('produit1' . $i));
+            $this->setProduct($this->getReference ('produit' . $i));
 
             $em->persist($orderDetail);
         }

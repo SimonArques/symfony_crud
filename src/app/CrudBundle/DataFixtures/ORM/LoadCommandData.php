@@ -8,11 +8,12 @@
 
 namespace CrudBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Command;
 
-class LoadCommandData implements FixtureInterface
+class LoadCommandData extends AbstractFixture implements OrderedFixtureInterface
 {
 
     public function load(ObjectManager $em){
@@ -21,12 +22,10 @@ class LoadCommandData implements FixtureInterface
         {
             $command  = new Command();
             $command->setRef("1234567890" . $i);
-            $command->setDateCreated(new \DateTime('2016-10-10'));
+            $command->setDateCreated(new \DateTime());
+            $command->setCustomer($this->getReference('1234567890' . $i));
 
-
-            $this->setCustomer($this->getReference ('1234567890' . $i));
-
-            $em->persist($customer);
+            $em->persist($command);
         }
 
         $em->flush($command);
