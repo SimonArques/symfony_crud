@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\Delivery:
   type:  entity
+  repositoryClass: app\CrudBundle\Repository\DeliveryRepository
   table:  delivery
   id:
     id:

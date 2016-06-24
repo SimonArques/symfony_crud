@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\Customer:
   type: entity
+  repositoryClass: app\CrudBundle\Repository\CustomerRepository
   table: customer
   id:
     id:

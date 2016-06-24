@@ -196,4 +196,3 @@ class Command
         return $this->customer;
     }
 }
-

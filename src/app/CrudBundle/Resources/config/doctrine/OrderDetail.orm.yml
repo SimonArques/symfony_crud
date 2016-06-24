@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\OrderDetail:
   type:  entity
+  repositoryClass: app\CrudBundle\Repository\OrderDetailRepository
   table:  orderDetail
   id:
     id:

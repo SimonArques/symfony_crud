@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\Command:
   type: entity
+  repositoryClass: app\CrudBundle\Repository\CommandRepository
   table: command
   id:
     id:

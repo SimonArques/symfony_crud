@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\Invoice:
   type:  entity
+  repositoryClass: app\CrudBundle\Repository\InvoiceRepository
   table:  invoice
   id:
     id:

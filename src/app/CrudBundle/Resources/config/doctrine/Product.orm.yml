@@ -1,5 +1,6 @@
 app\CrudBundle\Entity\Product:
   type:  entity
+  repositoryClass: app\CrudBundle\Repository\ProductRepository
   table:  product
   id:
     id:
