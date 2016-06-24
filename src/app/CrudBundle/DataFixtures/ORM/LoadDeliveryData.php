@@ -9,11 +9,12 @@
 namespace CrudBundle\DataFixtures\ORM;
 
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Delivery;
 
-class LoadDeliveryData implements FixtureInterface
+class LoadDeliveryData extends AbstractFixture implements FixtureInterface
 {
 
     public function load(ObjectManager $em){
@@ -21,8 +22,10 @@ class LoadDeliveryData implements FixtureInterface
         for($i = 1; $i <= 10; $i++) {
 
             $delivery = new Delivery();
-            $delivery->setRef('1234567890' . $i);
-            $delivery->setDateDelivery(new \DateTime('2016-10-10'));
+            $delivery->setRef('Delivery n' . $i);
+            $delivery->setDateDelivery(new \DateTime());
+            $delivery->setCommands($this->getReference('Command n' . $i));
+            $delivery->setInvoices($this->getReference('Invoice n' . $i));
         }
 
         $em->flush($delivery);
@@ -30,7 +33,7 @@ class LoadDeliveryData implements FixtureInterface
 
     public function getOrder()
     {
-        return 2; // the order in which fixtures will be loaded
+        return 5; // the order in which fixtures will be loaded
     }
 
 }

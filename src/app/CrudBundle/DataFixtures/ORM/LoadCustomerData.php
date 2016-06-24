@@ -30,7 +30,7 @@ class LoadCustomerData extends AbstractFixture implements OrderedFixtureInterfac
             $customer->setCity("Rennes");
             $customer->setTelephone("0299647501");
 
-            $this->setReference('1234567890' . $i, $customer);
+            $this->setReference('Customer n' . $i, $customer);
 
             $em->persist($customer);
         }
@@ -40,6 +40,6 @@ class LoadCustomerData extends AbstractFixture implements OrderedFixtureInterfac
     }
     public function getOrder()
     {
-        return 1; // the order in which fixtures will be loaded
+        return 2; // the order in which fixtures will be loaded
     }
 }

@@ -20,12 +20,12 @@ class OrderDetail
     /**
      * @var \app\CrudBundle\Entity\Product
      */
-    private $product;
+    private $products;
 
     /**
      * @var \app\CrudBundle\Entity\Command
      */
-    private $command;
+    private $commands;
 
 
     /**
@@ -63,50 +63,51 @@ class OrderDetail
     }
 
     /**
-     * Set product
+     * Set products
      *
-     * @param \app\CrudBundle\Entity\Product $product
+     * @param \app\CrudBundle\Entity\Product $products
      *
      * @return OrderDetail
      */
-    public function setProduct(\app\CrudBundle\Entity\Product $product = null)
+    public function setProducts(\app\CrudBundle\Entity\Product $products = null)
     {
-        $this->product = $product;
+        $this->products = $products;
 
         return $this;
     }
 
     /**
-     * Get product
+     * Get products
      *
      * @return \app\CrudBundle\Entity\Product
      */
-    public function getProduct()
+    public function getProducts()
     {
-        return $this->product;
+        return $this->products;
     }
 
     /**
-     * Set command
+     * Set commands
      *
-     * @param \app\CrudBundle\Entity\Command $command
+     * @param \app\CrudBundle\Entity\Command $commands
      *
      * @return OrderDetail
      */
-    public function setCommand(\app\CrudBundle\Entity\Command $command = null)
+    public function setCommands(\app\CrudBundle\Entity\Command $commands = null)
     {
-        $this->command = $command;
+        $this->commands = $commands;
 
         return $this;
     }
 
     /**
-     * Get command
+     * Get commands
      *
      * @return \app\CrudBundle\Entity\Command
      */
-    public function getCommand()
+    public function getCommands()
     {
-        return $this->command;
+        return $this->commands;
     }
 }
+

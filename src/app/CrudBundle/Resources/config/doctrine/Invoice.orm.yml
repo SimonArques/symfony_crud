@@ -11,8 +11,9 @@ app\CrudBundle\Entity\Invoice:
       type: string
       length: 255
       unique: true
-    dateInvoice: datetime
+    dateInvoice:
+      type: datetime
   oneToMany:
-    delivery:
+    deliveries:
       targetEntity: Delivery
       mappedBy: invoice

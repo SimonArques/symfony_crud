@@ -21,9 +21,11 @@ class LoadCommandData extends AbstractFixture implements OrderedFixtureInterface
         for($i = 1; $i <= 10; $i++)
         {
             $command  = new Command();
-            $command->setRef("1234567890" . $i);
+            $command->setRef("Command n" . $i);
             $command->setDateCreated(new \DateTime());
-            $command->setCustomer($this->getReference('1234567890' . $i));
+            $command->setCustomers($this->getReference('Customer n' . $i));
+
+            $this->setReference('Command n' . $i, $command );
 
             $em->persist($command);
         }
@@ -33,6 +35,6 @@ class LoadCommandData extends AbstractFixture implements OrderedFixtureInterface
     }
     public function getOrder()
     {
-        return 2; // the order in which fixtures will be loaded
+        return 4; // the order in which fixtures will be loaded
     }
 }

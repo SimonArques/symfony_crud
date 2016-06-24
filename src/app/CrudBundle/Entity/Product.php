@@ -23,7 +23,7 @@ class Product
     private $description;
 
     /**
-     * @var string
+     * @var float
      */
     private $price;
 
@@ -94,7 +94,7 @@ class Product
     /**
      * Set price
      *
-     * @param string $price
+     * @param float $price
      *
      * @return Product
      */
@@ -108,7 +108,7 @@ class Product
     /**
      * Get price
      *
-     * @return string
+     * @return float
      */
     public function getPrice()
     {
@@ -139,3 +139,4 @@ class Product
         return $this->oneToMany;
     }
 }
+

@@ -1,27 +1,28 @@
 app\CrudBundle\Entity\Delivery:
-  type:  entity
+  type: entity
   repositoryClass: app\CrudBundle\Repository\DeliveryRepository
-  table:  delivery
+  table: delivery
   id:
     id:
-      type:  integer
-      generator:  {  strategy:  AUTO  }
+      type: integer
+      generator: { strategy: AUTO }
   fields:
     ref:
       type: string
       length: 255
       unique: true
-    dateDelivery: datetime
+    dateDelivery:
+      type: datetime
   manyToOne:
-    command:
+    commands:
       targetEntity: Command
-      inversedBy: delivery
+      inversedBy: deliveries
       joinColumn:
         name: command_id
         referencedColumnName: id
-    invoice:
+    invoices:
       targetEntity: Invoice
-      inversedBy: delivery
+      inversedBy: deliveries
       joinColumn:
         name: invoice_id
         referencedColumnName: id

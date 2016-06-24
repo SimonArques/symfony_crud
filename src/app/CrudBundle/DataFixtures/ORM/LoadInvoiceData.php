@@ -9,11 +9,12 @@
 namespace CrudBundle\DataFixtures\ORM;
 
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use app\CrudBundle\Entity\Invoice;
 
-class LoadInvoiceData implements FixtureInterface
+class LoadInvoiceData extends AbstractFixture implements OrderedFixtureInterface
 {
 
     public function load(ObjectManager $em){
@@ -21,8 +22,10 @@ class LoadInvoiceData implements FixtureInterface
         for($i = 1; $i <= 10; $i++) {
 
             $invoice = new Invoice();
-            $invoice->setRef('1234567890' . $i);
-            $invoice->setDateInvoice(new \DateTime('2016-10-10'));
+            $invoice->setRef('Invoice n' . $i);
+            $invoice->setDateInvoice(new \DateTime());
+
+            $this->setReference('Invoice n' . $i, $invoice);
 
             $em->persist($invoice);
         }
@@ -32,7 +35,7 @@ class LoadInvoiceData implements FixtureInterface
 
     public function getOrder()
     {
-        return 2; // the order in which fixtures will be loaded
+        return 3; // the order in which fixtures will be loaded
     }
 
 }

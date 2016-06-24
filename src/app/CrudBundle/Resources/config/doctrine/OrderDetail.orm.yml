@@ -1,24 +1,24 @@
 app\CrudBundle\Entity\OrderDetail:
-  type:  entity
+  type: entity
   repositoryClass: app\CrudBundle\Repository\OrderDetailRepository
-  table:  orderDetail
+  table: orderDetail
   id:
     id:
-      type:  integer
-      generator:  {  strategy:  AUTO  }
+      type: integer
+      generator: { strategy: AUTO }
   fields:
     qte:
       type: float
   manyToOne:
-    product:
+    products:
       targetEntity: Product
-      inversedBy: orderDetail
+      inversedBy: orderDetails
       joinColumn:
         name: product_id
         referencedColumnName: id
-    command:
+    commands:
       targetEntity: Command
-      inversedBy: orderDetail
+      inversedBy: orderDetails
       joinColumn:
         name: command_id
         referencedColumnName: id

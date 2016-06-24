@@ -18,21 +18,21 @@ class Invoice
     private $ref;
 
     /**
-     * @var string
+     * @var \DateTime
      */
     private $dateInvoice;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $delivery;
+    private $deliveries;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->delivery = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->deliveries = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -72,7 +72,7 @@ class Invoice
     /**
      * Set dateInvoice
      *
-     * @param string $dateInvoice
+     * @param \DateTime $dateInvoice
      *
      * @return Invoice
      */
@@ -86,7 +86,7 @@ class Invoice
     /**
      * Get dateInvoice
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateInvoice()
     {
@@ -102,7 +102,7 @@ class Invoice
      */
     public function addDelivery(\app\CrudBundle\Entity\Delivery $delivery)
     {
-        $this->delivery[] = $delivery;
+        $this->deliveries[] = $delivery;
 
         return $this;
     }
@@ -114,16 +114,17 @@ class Invoice
      */
     public function removeDelivery(\app\CrudBundle\Entity\Delivery $delivery)
     {
-        $this->delivery->removeElement($delivery);
+        $this->deliveries->removeElement($delivery);
     }
 
     /**
-     * Get delivery
+     * Get deliveries
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getDelivery()
+    public function getDeliveries()
     {
-        return $this->delivery;
+        return $this->deliveries;
     }
 }
+

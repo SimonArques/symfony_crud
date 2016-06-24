@@ -11,7 +11,8 @@ app\CrudBundle\Entity\Command:
       type: string
       length: 255
       unique: true
-    dateCreated: datetime
+    dateCreated:
+      type: datetime
   oneToMany:
     orderDetail:
       targetEntity: OrderDetail
@@ -20,9 +21,11 @@ app\CrudBundle\Entity\Command:
       targetEntity: Delivery
       mappedBy: command
   manyToOne:
-    customer:
+    customers:
       targetEntity: Customer
-      inversedBy: command
+      inversedBy: commands
       joinColumn:
         name: command_id
         referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]

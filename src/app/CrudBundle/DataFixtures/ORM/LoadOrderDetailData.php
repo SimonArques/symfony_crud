@@ -22,7 +22,8 @@ class LoadOrderDetailData extends AbstractFixture implements OrderedFixtureInter
             $orderDetail  = new OrderDetail();
             $orderDetail->setQte('20' . $i);
 
-            $orderDetail->setProduct($this->getReference ('produit' . $i));
+            $orderDetail->setCommands($this->getReference('Command n' . $i));
+            $orderDetail->setProducts($this->getReference('Product' . $i));
 
             $em->persist($orderDetail);
         }
@@ -32,6 +33,6 @@ class LoadOrderDetailData extends AbstractFixture implements OrderedFixtureInter
     }
     public function getOrder()
     {
-        return 2; // the order in which fixtures will be loaded
+        return 5; // the order in which fixtures will be loaded
     }
 }

@@ -21,12 +21,11 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
         for($i = 1; $i <= 10; $i++)
         {
             $product = new Product();
-            $product->setName('produit'. $i);
+            $product->setName('Product n'. $i);
             $product->setDescription('Un produit cool');
             $product->setPrice("20");
 
-            $this->setReference('produit' . $i, $product);
-
+            $this->setReference('Product n' . $i, $product);
 
             $em->persist($product);
         }

@@ -18,19 +18,19 @@ class Delivery
     private $ref;
 
     /**
-     * @var string
+     * @var \DateTime
      */
     private $dateDelivery;
 
     /**
      * @var \app\CrudBundle\Entity\Command
      */
-    private $command;
+    private $commands;
 
     /**
      * @var \app\CrudBundle\Entity\Invoice
      */
-    private $invoice;
+    private $invoices;
 
 
     /**
@@ -70,7 +70,7 @@ class Delivery
     /**
      * Set dateDelivery
      *
-     * @param string $dateDelivery
+     * @param \DateTime $dateDelivery
      *
      * @return Delivery
      */
@@ -84,7 +84,7 @@ class Delivery
     /**
      * Get dateDelivery
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateDelivery()
     {
@@ -92,50 +92,51 @@ class Delivery
     }
 
     /**
-     * Set command
+     * Set commands
      *
-     * @param \app\CrudBundle\Entity\Command $command
+     * @param \app\CrudBundle\Entity\Command $commands
      *
      * @return Delivery
      */
-    public function setCommand(\app\CrudBundle\Entity\Command $command = null)
+    public function setCommands(\app\CrudBundle\Entity\Command $commands = null)
     {
-        $this->command = $command;
+        $this->commands = $commands;
 
         return $this;
     }
 
     /**
-     * Get command
+     * Get commands
      *
      * @return \app\CrudBundle\Entity\Command
      */
-    public function getCommand()
+    public function getCommands()
     {
-        return $this->command;
+        return $this->commands;
     }
 
     /**
-     * Set invoice
+     * Set invoices
      *
-     * @param \app\CrudBundle\Entity\Invoice $invoice
+     * @param \app\CrudBundle\Entity\Invoice $invoices
      *
      * @return Delivery
      */
-    public function setInvoice(\app\CrudBundle\Entity\Invoice $invoice = null)
+    public function setInvoices(\app\CrudBundle\Entity\Invoice $invoices = null)
     {
-        $this->invoice = $invoice;
+        $this->invoices = $invoices;
 
         return $this;
     }
 
     /**
-     * Get invoice
+     * Get invoices
      *
      * @return \app\CrudBundle\Entity\Invoice
      */
-    public function getInvoice()
+    public function getInvoices()
     {
-        return $this->invoice;
+        return $this->invoices;
     }
 }
+
