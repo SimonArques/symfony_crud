@@ -1,7 +1,4 @@
 app_crud:
-    resource: "@appCrudBundle/Resources/config/routing.yml"
-    prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
+    resource: "@appCrudBundle/Controller/"
     type:     annotation
+    prefix:   /
