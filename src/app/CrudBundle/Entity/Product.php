@@ -28,10 +28,17 @@ class Product
     private $price;
 
     /**
-     * @var string
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $oneToMany;
+    private $orderDetails;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->orderDetails = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -116,27 +123,36 @@ class Product
     }
 
     /**
-     * Set oneToMany
+     * Add orderDetail
      *
-     * @param string $oneToMany
+     * @param \app\CrudBundle\Entity\OrderDetail $orderDetail
      *
      * @return Product
      */
-    public function setOneToMany($oneToMany)
+    public function addOrderDetail(\app\CrudBundle\Entity\OrderDetail $orderDetail)
     {
-        $this->oneToMany = $oneToMany;
+        $this->orderDetails[] = $orderDetail;
 
         return $this;
     }
 
     /**
-     * Get oneToMany
+     * Remove orderDetail
      *
-     * @return string
+     * @param \app\CrudBundle\Entity\OrderDetail $orderDetail
      */
-    public function getOneToMany()
+    public function removeOrderDetail(\app\CrudBundle\Entity\OrderDetail $orderDetail)
     {
-        return $this->oneToMany;
+        $this->orderDetails->removeElement($orderDetail);
+    }
+
+    /**
+     * Get orderDetails
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrderDetails()
+    {
+        return $this->orderDetails;
     }
 }
-

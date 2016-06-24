@@ -203,4 +203,3 @@ class Command
         $this->dateCreated = new \DateTime();
     }
 }
-

@@ -127,4 +127,3 @@ class Invoice
         return $this->deliveries;
     }
 }
-

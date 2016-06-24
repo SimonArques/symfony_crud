@@ -17,7 +17,7 @@ app\CrudBundle\Entity\Product:
     price:
       type: float
 
-    oneToMany:
-      orderDetails:
-        targetEntity: OrderDetail
-        mappedBy: product
+  oneToMany:
+    orderDetails:
+      targetEntity: OrderDetail
+      mappedBy: product

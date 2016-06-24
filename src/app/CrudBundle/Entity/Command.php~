@@ -18,7 +18,7 @@ class Command
     private $ref;
 
     /**
-     * @var string
+     * @var \DateTime
      */
     private $dateCreated;
 
@@ -35,7 +35,7 @@ class Command
     /**
      * @var \app\CrudBundle\Entity\Customer
      */
-    private $customer;
+    private $customers;
 
     /**
      * Constructor
@@ -83,7 +83,7 @@ class Command
     /**
      * Set dateCreated
      *
-     * @param string $dateCreated
+     * @param \DateTime $dateCreated
      *
      * @return Command
      */
@@ -97,7 +97,7 @@ class Command
     /**
      * Get dateCreated
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -173,26 +173,33 @@ class Command
     }
 
     /**
-     * Set customer
+     * Set customers
      *
-     * @param \app\CrudBundle\Entity\Customer $customer
+     * @param \app\CrudBundle\Entity\Customer $customers
      *
      * @return Command
      */
-    public function setCustomer(\app\CrudBundle\Entity\Customer $customer = null)
+    public function setCustomers(\app\CrudBundle\Entity\Customer $customers = null)
     {
-        $this->customer = $customer;
+        $this->customers = $customers;
 
         return $this;
     }
 
     /**
-     * Get customer
+     * Get customers
      *
      * @return \app\CrudBundle\Entity\Customer
      */
-    public function getCustomer()
+    public function getCustomers()
     {
-        return $this->customer;
+        return $this->customers;
+    }
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->dateCreated = new \DateTime();
     }
 }

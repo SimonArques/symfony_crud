@@ -110,4 +110,3 @@ class OrderDetail
         return $this->commands;
     }
 }
-

@@ -25,7 +25,7 @@ class LoadCommandData extends AbstractFixture implements OrderedFixtureInterface
             $command->setDateCreated(new \DateTime());
             $command->setCustomers($this->getReference('Customer n' . $i));
 
-            $this->setReference('Command n' . $i, $command );
+            $this->setReference('Command n' . $i, $command);
 
             $em->persist($command);
         }

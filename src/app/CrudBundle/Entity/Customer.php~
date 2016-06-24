@@ -50,14 +50,14 @@ class Customer
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $Command;
+    private $commands;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->Command = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->commands = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -247,7 +247,7 @@ class Customer
      */
     public function addCommand(\app\CrudBundle\Entity\Command $command)
     {
-        $this->Command[] = $command;
+        $this->commands[] = $command;
 
         return $this;
     }
@@ -259,16 +259,16 @@ class Customer
      */
     public function removeCommand(\app\CrudBundle\Entity\Command $command)
     {
-        $this->Command->removeElement($command);
+        $this->commands->removeElement($command);
     }
 
     /**
-     * Get command
+     * Get commands
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCommand()
+    public function getCommands()
     {
-        return $this->Command;
+        return $this->commands;
     }
 }

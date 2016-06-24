@@ -14,7 +14,6 @@ app\CrudBundle\Entity\Customer:
     name:
       type: string
       length: 255
-      unique: true
     address:
       type: string
       length: 255
