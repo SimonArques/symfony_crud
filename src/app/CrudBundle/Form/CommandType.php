@@ -2,6 +2,7 @@
 
 namespace app\CrudBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -17,7 +18,10 @@ class CommandType extends AbstractType
         $builder
             ->add('ref')
             ->add('dateCreated')
-            ->add('customers')
+            ->add('customers', EntityType::class, array(
+                'class' => 'CrudBundle:Customer',
+                'choice_label' => 'name',
+            ))
         ;
     }
     

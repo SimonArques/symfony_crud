@@ -2,6 +2,7 @@
 
 namespace app\CrudBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -17,7 +18,10 @@ class OrderDetailType extends AbstractType
         $builder
             ->add('qte')
             ->add('products')
-            ->add('commands')
+            ->add('commands', EntityType::class, array(
+                'class' => 'CrudBundle:Command',
+                'choice_label' => 'ref',
+            ))
         ;
     }
     

@@ -2,6 +2,7 @@
 
 namespace app\CrudBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -18,10 +19,13 @@ class DeliveryType extends AbstractType
             ->add('ref')
             ->add('dateDelivery')
             ->add('commands')
-            ->add('invoices')
+            ->add('invoices', EntityType::class, array(
+                'class' => 'CrudBundle:Invoice',
+                'choice_label' => 'ref',
+            ))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
