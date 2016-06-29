@@ -1,0 +1,23 @@
+app\CrudBundle\Entity\Product:
+  type: entity
+  repositoryClass: app\CrudBundle\Repository\ProductRepository
+  table: product
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+    description:
+      type: string
+      length: 255
+      nullable: true
+    price:
+      type: float
+
+  oneToMany:
+    orderDetails:
+      targetEntity: OrderDetail
+      mappedBy: product

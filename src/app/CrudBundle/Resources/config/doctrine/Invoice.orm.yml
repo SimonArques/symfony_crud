@@ -1,0 +1,19 @@
+app\CrudBundle\Entity\Invoice:
+  type:  entity
+  repositoryClass: app\CrudBundle\Repository\InvoiceRepository
+  table:  invoice
+  id:
+    id:
+      type:  integer
+      generator:  {  strategy:  AUTO  }
+  fields:
+    ref:
+      type: string
+      length: 255
+      unique: true
+    dateInvoice:
+      type: datetime
+  oneToMany:
+    deliveries:
+      targetEntity: Delivery
+      mappedBy: invoice

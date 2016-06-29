@@ -1,0 +1,41 @@
+AppBundle\Entity\Customer:
+  type: entity
+  table: customer
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ref:
+      type: string
+      length: 255
+      unique: true
+    name:
+      type: string
+      length: 255
+      unique: true
+    address:
+      type: string
+      length: 255
+    postalCode:
+      type: string
+      length: 5
+    city:
+      type: string
+      lenght: 100
+    telephone:
+      type: string
+      length: 20
+      nullable: true
+    email:
+      type: string
+      length: 255
+  oneToMany:
+    Command:
+      targetEntity: Command
+      mappedBy: customer
+
+
+
+
+

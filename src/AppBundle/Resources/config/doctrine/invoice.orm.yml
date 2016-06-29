@@ -1,0 +1,17 @@
+AppBundle\Entity\Invoice:
+  type:  entity
+  table:  invoice
+  id:
+    id:
+      type:  integer
+      generator:  {  strategy:  AUTO  }
+  fields:
+    ref:
+      type: string
+      length: 255
+      unique: true
+    dateInvoice: datetime
+  oneToMany:
+    delivery:
+      targetEntity: Delivery
+      mappedBy: invoice

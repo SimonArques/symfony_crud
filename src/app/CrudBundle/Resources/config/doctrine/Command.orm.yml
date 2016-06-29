@@ -1,0 +1,31 @@
+app\CrudBundle\Entity\Command:
+  type: entity
+  repositoryClass: app\CrudBundle\Repository\CommandRepository
+  table: command
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ref:
+      type: string
+      length: 255
+      unique: true
+    dateCreated:
+      type: datetime
+  oneToMany:
+    orderDetail:
+      targetEntity: OrderDetail
+      mappedBy: command
+    delivery:
+      targetEntity: Delivery
+      mappedBy: command
+  manyToOne:
+    customers:
+      targetEntity: Customer
+      inversedBy: commands
+      joinColumn:
+        name: command_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
